@@ -1,0 +1,39 @@
+<div th:fragment="update-category" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <div id="updateCategoryModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm" style="margin-top: 150px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" th:text="#{updateCategory}"></h4>
+                    <button id="closeModalEditCategory" type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="center-block  text-center">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="categoryID" th:text="#{adminPanelCategoryID}"></label>
+                            <input type="text" class="form-control mb-2" id="categoryID"
+                                   name="id" readonly/>
+                            <label for="categoryName" th:text="#{adminPanelCategoryName}"></label>
+                            <input type="text" class="form-control mb-2" id="categoryName"
+                                   name="name"/>
+                            <label for="parent-category-select" th:text="#{adminPanelParentCategoryName}"></label>
+                            <select id="parent-category-select" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer" id="updateButto5nInModal">
+                        <div>
+                        </div>
+                        <button id="saveCategoryButton" type="button" class="btn btn-primary" th:text="#{saveButton}"></button>
+                        <button id="closeEditCategory" type="button" class="btn btn-secondary"
+                                data-dismiss="modal" th:text="#{closeButton}"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

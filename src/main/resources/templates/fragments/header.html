@@ -1,0 +1,90 @@
+<header th:fragment="main-header" xmlns:th="https://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <div class="header-line">
+        <div class="header-container">
+            <div class="header-menu-left">
+                <ul>
+                    <li><a th:text="#{ads}" class="header-link-item" href="/">Объявления</a></li> <!--todo: add links-->
+                    <li><a th:text="#{shops}" class="header-link-item" href="#">Магазины</a></li>
+                    <li><a th:text="#{business}" class="header-link-item" href="#">Бизнес</a></li>
+                    <li><a th:text="#{help}" class="header-link-item" href="#">Помощь</a></li>
+                    <li sec:authorize="hasAuthority('ADMIN')" class="admin-button">
+                        <a class="header-link-item"
+                           th:text="#{admin_panel}" href="/admin_page">Админка</a></li>
+                </ul>
+            </div>
+
+            <div style="padding-top: 5px" class="header-favorite-button">
+                <a href="#">
+                    <svg width="25" height="21" xmlns="http://www.w3.org/2000/svg">
+                        <path style="padding-top: 5px" class="fill-favorite-icon"
+                              d="M10.918 5.085a5.256 5.256 0 0 1 7.524 0c2.077 2.114 2.077 5.541 0 7.655l-7.405 7.534a.75.75 0 0 1-1.074 0L2.558 12.74c-2.077-2.114-2.077-5.54 0-7.655a5.256 5.256 0 0 1 7.524 0c.15.152.289.312.418.479.13-.167.269-.327.418-.479z"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="header-menu-right">
+                <ul class="list-inline" style="display: flex;">
+                    <li sec:authorize="!isAuthenticated()" style="padding-top: 5px" >
+                        <a th:text="#{reg}" class="header-link-item header-button-sign unauthenticated"
+                           data-toggle="modal" data-target="#registrationModalCenter"
+                           href="#">Вход и регистрация</a>
+                    </li>
+                    <li sec:authorize="isAuthenticated()" class="dropdown">
+                        <a class="btn btn-light " type="button" data-toggle="dropdown"
+                           data-target="#dropdownUserInfo" id="dropdownButton" style="padding: 1px" href="#">
+                            <!--/*@thymesVar id="user" type="com.board_of_ads.models.User"*/-->
+                            <div th:if="${user.getAvatar()}">
+                                <img class="user-info-avatar" id="avatar" th:src="${user.getAvatar().getPathURL()}">
+                                <div class="user-info-name" id="name" th:text="${user.getFirsName() + ' ' + user.getLastName()}">%username%</div>
+                            </div>
+                            <div th:if="${user.getAvatar() == null}">
+                                <div class="user-info-avatar" id="avatar"></div>
+                                <div class="user-info-name" id="name" th:text="${user.getFirsName() + ' ' + user.getLastName()}">%username%</div>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu " id="dropdownUserInfo" aria-labelledby="dropdownButton">
+                            <li class="dropdown-item">
+                                <a href="#">
+                                    <span style="color: black"><strong>0,0</strong></span>
+                                    <div class="rating-mini">
+                                        <span class="active"></span>
+                                        <span class="active"></span>
+                                        <span class="active"></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                    <span>Нет отзывов</span>
+                                </a>
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><a th:text="#{myAds}" href="/profile">Мои объявления</a></li>
+                            <li class="dropdown-item "><a th:text="#{MyReviews}" href="/profile">Мои отзывы</a></li>
+                            <li class="dropdown-item "><a th:text="#{Favourites}" href="/profile">Избранное</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item "><a th:text="#{messages}" href="/profile">Сообщения</a></li>
+                            <li class="dropdown-item "><a th:text="#{Notifications}" class="text-primary" href="/profile">Уведомления</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item d-flex justify-content-between">
+                                <a th:text="#{Wallet}" style="padding-right: 110px" href="/profile">Кошелёк</a>
+                                <span class="text-secondary" style="color: gray;">0 ₽</span>
+                            </li>
+                            <li class="dropdown-item "><a th:text="#{PaidService}" href="/profile">Платные услуги</a></li>
+                            <li class="dropdown-item "><a th:text="#{AvitoPro}" href="/profile">Авито Pro</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item "><a th:text="#{settings}" href="/profile">Настройки</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item"><a th:text="#{exit}" style="color: gray;" href="/logout">Выйти</a></li>
+                        </ul>
+                    </li>
+                    <li style="padding-top: 5px">
+                        <a sec:authorize="!isAuthenticated()" th:text="#{add}" class="header-button-new-ads" data-target="#registrationModalCenter" data-toggle="modal" href="#">Подать объявление</a>
+                        <a sec:authorize="isAuthenticated()" id="newPost" th:text="#{add}" class="header-button-new-ads" href="/new_post">Подать объявление</a>
+                    </li>
+                    <li style="padding-top: 5px">
+                        <a class="header-link-item header-button-sign" th:href="@{'?locale=ru'}">Ru</a>
+                        <a class="header-link-item header-button-sign" th:href="@{'?locale=en'}">En</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

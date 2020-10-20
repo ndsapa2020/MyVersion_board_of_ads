@@ -1,0 +1,116 @@
+/* menu global */
+
+#menu-search {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    font: 13px/1.0 Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+#menu-search li {
+    display: table-cell;
+    background: #f7f7f7;
+    padding: .5em;
+    border-top: 3px solid silver;
+    border-bottom: 3px solid silver;
+}
+
+/* 5 elements horizontal menu  */
+
+#category {
+    width: 15.5%;
+    text-align: left;
+    border-left: 3px solid silver;
+    border-right: 1px solid silver;
+}
+#category-select, #category-select-city, #image-select, #search-left-btn,#search-main-text {
+    width: 100%;
+    border: 0px;
+    background: #f7f7f7;
+}
+
+#search-main {
+    width: 45.5%;
+    text-align: left;
+    opacity: 0.4;
+    border-left: 1px solid silver;
+}
+
+#image-field {
+    width: 10.5%;
+    border: 0px;
+    text-align: left;
+    border-right: 3px solid silver;
+    border-left: 1px solid silver;
+}
+
+#region {
+    width: 14%;
+    text-align: left;
+    border-right: 3px solid silver;
+}
+#radius {
+    width: 17%;
+    text-align: left;
+    border-right: 3px solid silver;
+}
+#search-left {
+    width: 5.5%;
+    text-align: center;
+    border-right: 3px solid silver;
+}
+
+/* no focus global settings */
+
+a:active, a:focus {
+    outline: none;
+}
+input, textarea {
+    outline:none;
+}
+input:active, textarea:active {
+    outline:none;
+}
+:focus {
+    outline:none;
+}
+textarea {
+    resize:none;
+}
+textarea {
+    resize:vertical;
+}
+textarea {
+    resize: horizontal;
+}
+
+.category-parent {
+    background-color: lightgrey;
+}
+
+.modal-position {
+    height: 400px;
+    margin-top: 200px
+}
+
+.modal-search-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 10px
+}
+
+.citiesOptions {
+    margin-top: 10px;
+    height: 270px;
+}
+
+.modal-search-close {
+    position: relative;
+    left: 35px;
+    bottom: 13px;
+}
+
+.button-count-post {
+    position:absolute;
+    bottom: 30px;
+    right: 15px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add new post</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/add-new-post-style.css" th:href="@{/css/add-new-post-style.css}"/>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main_page.css" th:href="@{/css/main_page.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/header-fragment-style.css" th:href="@{/css/header-fragment-style.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/auth-style.css" th:href="@{/css/auth-style.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/user-info-menu.css" th:href="@{/css/user-info-menu.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main_page_posting.css" th:href="@{/css/main_page_posting.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/recovery-pswd.css" th:href="@{/css/recovery-pswd.css}"/>
+
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header th:insert="fragments/header::main-header"></header>
+<div class="main-container">
+    <div class="head-container">
+        <a><img class="main-logo" th:src="@{images/logo.jpg}"></a>
+        <div class="text-in-logo-header">Новое объявление</div>
+    </div>
+    <div class="category-head-container">
+        <div class="category-head-text">Категория</div>
+    </div>
+    <div class="cascade-table-container">
+        <div class="cascade-table-column" id="cascade-table">
+            <div class="category-table-title">
+                Категория
+            </div>
+        </div>
+        <div class="cascade-table-column-2" id="cascade-table-2" style="display: none">
+        </div>
+        <div class="cascade-table-column-3" id="cascade-table-3" style="display: none">
+        </div>
+    </div>
+</div>
+
+<script src="../static/js/newpost.js" th:src="@{/js/newpost.js}"></script>
+</body>
+</html>

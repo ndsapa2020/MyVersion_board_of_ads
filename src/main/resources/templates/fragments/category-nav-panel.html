@@ -1,0 +1,26 @@
+<div th:fragment="nav-panel" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <div id="hideCategoryPanel">
+        <div class="tab-pane fade" id="nav-category">
+            <main class="container-fluid">
+                <div class="row">
+                    <div class="col-md-10 bg-light vh-100">
+                        <div class="container">
+                            <div class="row text-primary p-2">
+                                <button type="button"
+                                        class="btn btn-primary text-capitalize"
+                                        th:text="#{adminAddCategory}"
+                                   id="addCategory">
+                                </button>
+                            </div>
+                            <h2 th:text="#{categoryList}"></h2>
+                            <ul class="list-group" id="listCategory">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</div>

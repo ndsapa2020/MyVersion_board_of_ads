@@ -1,0 +1,59 @@
+.dropdown:hover > .dropdown-menu {
+    display: block;
+    transition-delay: 0.30s;
+}
+#dropdownButton {
+    transition: none;
+}
+
+.dropdown a:hover {
+    color: #FF0000;
+    background-color: transparent;
+    border: none;
+}
+
+.dropdown-menu > li > a {
+    color: #009cf0;
+    display: inline-block;
+}
+
+.dropdown-menu > li > a:hover {
+    color: #FF0000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.rating-mini {
+    display: inline-block;
+    font-size: 0;
+}
+
+.rating-mini span {
+    padding: 0;
+    font-size: 20px;
+    line-height: 1;
+    color: lightgrey;
+}
+
+.rating-mini > span:before {
+    content: '★';
+}
+
+.rating-mini > span.active {
+    color: gold;
+}
+
+.user-info-avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-right: 10px;
+    color: white;
+}
+
+.user-info-name {
+    display: inline-block;
+}

@@ -1,0 +1,46 @@
+<header th:fragment="search-header" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <ul id="menu-search">
+
+    <li id="category">
+        <select id="category-select" class="categoriesSelect" onchange="getCategoryOption(this)">
+        </select>
+    </li>
+
+    <li id="search-main"> <!--todo: search -->
+        <form>
+            <input id="search-main-text"
+                   type="text"
+                   name="search-form"
+                   th:placeholder="#{search}">
+        </form>
+    </li>
+
+        <li id="image-field">
+            <select id="image-select" name="изображение">
+                <option th:text="#{allAds}" value="пункт1" selected="selected">Все объявления</option>
+                <option th:text="#{wFoto}" value="пункт2">С фото</option>
+                <option th:text="#{woFoto}" value="пункт3">Без фото</option>
+            </select>
+        </li>
+
+
+    <li id="region"
+        data-toggle="modal"
+        data-target="#searchModal">
+        <select id="category-select-city" disabled >
+        </select>
+    </li>
+
+    <li id="search-left"> <!--todo: link to action -->
+        <button th:text="#{justsearch}" id="search-left-btn"
+                name="search-button" onclick="searchPosts()">
+            Найти
+        </button>
+    </li>
+
+    </ul>
+
+</header>
+</body>
+

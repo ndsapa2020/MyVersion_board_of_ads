@@ -1,0 +1,62 @@
+#main_page_posting {
+    display: inline-block;
+    height: 290px;
+    width: 220px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 13px;
+}
+#cardPosting {
+    border: none;
+}
+#postingImageRef {
+    width: 100%;
+    height: 150px;
+    display: block;
+}
+#ImageSlider {
+    width: 100%;
+    height: 150px;
+    display: block;
+}
+
+#carouselInner {
+    width: 100%;
+    height: 150px;
+    display: block;
+}
+#postingCardBody {
+    margin-top: 5px;
+    padding: 0;
+}
+#postingTitle {
+    text-decoration: none;
+}
+#postingTitle:hover {
+    color: #FF0000;
+}
+#MainBody {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 1230px;
+}
+.carousel-indicators {
+    margin: 0;
+}
+.carousel-indicators li {
+    background-color: transparent;
+    width: 70px;
+    height: 130px;
+    margin: 1px;
+    border-bottom: 5px solid gray;
+}
+.carousel-indicators li:hover {
+    background-color: transparent;
+    border-bottom-color: blue;
+}
+.carousel-indicators li:active {
+    border-bottom-color: blue;
+}

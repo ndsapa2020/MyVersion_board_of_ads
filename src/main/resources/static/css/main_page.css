@@ -1,0 +1,7 @@
+.second-header {
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 1230px;
+}
+
+.redborder { border: 1px solid red; }

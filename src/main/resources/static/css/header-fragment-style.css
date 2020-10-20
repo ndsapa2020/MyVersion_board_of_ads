@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+}
+
+.header-line {
+    font: 13px/1.5 Arial,'Helvetica Neue',Helvetica,sans-serif;
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid #d8d8d8;
+    background-color: #f7f7f7;
+}
+
+.header-container {
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 1230px;
+    display: flex;
+}
+
+.header-menu-left ul {
+    margin: 0; /* Обнуляем значение отступов */
+    padding-top: 10px; /* Значение полей */
+    padding-left: 0;
+}
+
+.header-menu-left ul li {
+    display: inline; /* Отображать как строчный элемент */
+    padding: 3px; /* Поля вокруг текста */
+    color: #a1a1a1;
+}
+
+.header-menu-right ul {
+    margin: 0; /* Обнуляем значение отступов */
+    padding-top: 5px; /* Значение полей */
+}
+
+.header-menu-right ul li {
+    margin-right: 5px; /* Отступ слева */
+    color: #a1a1a1;
+}
+.header-link-item {
+    color: #a1a1a1;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+.header-link-item:hover {
+    color: red;
+    text-decoration: none;
+}
+
+.header-favorite-button {
+    margin-left: auto;
+    margin-top: 2px;
+}
+
+.fill-favorite-icon {
+    fill: #ccc;
+}
+
+.fill-favorite-icon:hover {
+    fill: #858585;
+}
+
+.header-button-sign {
+    color:#009cf0;
+}
+
+.header-button-new-ads {
+    color: #fff;
+    text-decoration: none;
+    background: #0af; /* фон кнопки */
+    padding: .5em 1.0em; /* отступ от текста */
+    border-radius: 4px;
+}
+
+.header-button-new-ads:hover {
+    background: #009cf0;
+    text-decoration: none;
+}
+
+.admin-button {
+    display: none;
+}

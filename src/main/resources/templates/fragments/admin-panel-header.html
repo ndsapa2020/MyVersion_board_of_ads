@@ -1,0 +1,82 @@
+<header th:fragment="main-adm" xmlns:th="https://www.thymeleaf.org">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+
+    <div role="tabpanel">
+            <main class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 vh-100 my-3">
+                    <div>
+                        <div><a id="statisticPanel"
+                               class="header-link-item"
+                               href="#nav-analytics">
+                                <i class="fa fa-area-chart"></i>
+                                <span th:text="#{analytic}"></span>
+                            </a>
+                        </div>
+                        <div><a id="categoryPanel"
+                               class="header-link-item"
+                               href="#nav-category">
+                                <i class="fa fa-sitemap"></i>
+                                <span th:text="#{adminCategory}"></span>
+                            </a>
+                        </div>
+                        <div><a id="userTableAtAdminPanel"
+                               class="header-link-item"
+                               href="#nav-userlist">
+                                <i class="fa fa-user"></i>
+                                <span th:text="#{adminPanelUsers}"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 bg-light vh-100">
+                    <div class="container" id="panel-content">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div id="hideTheUsersTable">
+                                <div class="tab-pane fade" id="nav-userlist">
+                                    <div class="row text-primary p-2">
+                                        <button type="button"
+                                                class="btn btn-primary text-capitalize"
+                                                th:text="#{adminPanelUserAddButton}"
+                                                id="addUser">
+                                        </button>
+                                    </div>
+                                    <p class="lead" th:align="center" th:text="#{adminPanelUserListName}"><strong></strong></p>
+                                    <table class="table table-striped table-bordered" id="userTableJs">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" th:text="#{adminPanelUserID}"></th>
+                                            <th scope="col" th:text="#{adminPanelUserMail}"></th>
+                                            <th scope="col" th:text="#{adminPanelUserFirstName}"></th>
+                                            <th scope="col" th:text="#{adminPanelUserLastName}"></th>
+                                            <th scope="col" th:text="#{adminPanelUserPhone}"></th>
+                                            <th scope="col" th:text="#{adminPanelUserDataReg}"></th>
+                                            <th scope="col" th:text="#{adminPanelUserActivation}"></th>
+                                            <th scope="col" th:text="#{adminPanelUserRoles}"></th>
+                                            <th scope="col" th:text="#{adminPanelUserEdit}"></th>
+                                            <th scope="col" th:text="#{adminPanelUserDelete}"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div th:insert="fragments/category-nav-panel::nav-panel"></div>
+                            <div th:insert="fragments/category-modal-update::update-category"></div>
+                            <div th:insert="fragments/category-modal-delete::delete-category"></div>
+                            <div th:insert="fragments/category-modal-add::add-category"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div th:insert="fragments/users-modal-add::add-user"></div>
+    <div th:insert="fragments/users-modal-edit::edit-user"></div>
+    <div th:insert="fragments/users-modal-delete::delete-user"></div>
+
+</header>

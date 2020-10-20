@@ -1,0 +1,39 @@
+<div th:fragment="delete-category" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <div id="deleteCategoryModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm" style="margin-top: 150px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" th:text="#{deleteCategory}"></h4>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="center-block  text-center">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="categoryDeleteID" th:text="#{adminPanelCategoryID}"></label>
+                            <input type="text" class="form-control mb-2" id="categoryDeleteID"
+                                   name="id" readonly/>
+                            <label for="categoryDeleteName" th:text="#{adminPanelCategoryName}"></label>
+                            <input type="text" class="form-control mb-2" id="categoryDeleteName"
+                                   name="name" readonly/>
+                            <label for="categoryParentName" th:text="#{adminPanelParentCategoryName}"></label>
+                            <input type="text" class="form-control mb-2" id="categoryParentName"
+                                   name="name" readonly/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div>
+                        </div>
+                        <button id="deleteCategoryButton" onclick="deleteCategory()" type="button" class="btn btn-danger" th:text="#{deleteButton}"></button>
+                        <button id="closeDeleteCategory" type="button" class="btn btn-secondary"
+                                data-dismiss="modal" th:text="#{closeButton}"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

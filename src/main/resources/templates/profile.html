@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/main_page.css" th:href="@{/css/main_page.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/fragment-navigate-panel-style.css" th:href="@{/css/fragment-navigate-panel-style.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/header-fragment-style.css" th:href="@{/css/header-fragment-style.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/search-fragment-style.css" th:href="@{/css/search-fragment-style.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/auth-style.css" th:href="@{/css/auth-style.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/user-info-menu.css" th:href="@{/css/user-info-menu.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/recovery-pswd.css" th:href="@{/css/recovery-pswd.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/profile-body.css" th:href="@{/css/profile-body.css}"/>
+</head>
+<body>
+<!--header-->
+<header th:insert="fragments/header::main-header"></header>
+<div class="second-header">
+    <div th:insert="fragments/navigate-panel::navigate-header"></div>
+    <div th:insert="fragments/authorization-button::authorization-button"></div>
+    <div th:insert="fragments/pswd-recovery-modal-window::password-recovery"></div>
+    <div th:insert="fragments/new-password-modal::new-password"></div>
+</div>
+<div th:insert="fragments/profile-page-body::profile-body"></div>
+</body>
+</html>

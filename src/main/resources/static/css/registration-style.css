@@ -1,0 +1,20 @@
+#center{
+    text-align: center;
+}
+
+a{
+    color:#00717F;
+    text-decoration: none;
+}
+a:active{
+    color:#5bc0de;
+    text-decoration: none;
+}
+a:visited{
+    color:#5bc0de;
+    text-decoration: none;
+}
+a:hover{
+    color:#5bc0de;
+    text-decoration: none;
+}

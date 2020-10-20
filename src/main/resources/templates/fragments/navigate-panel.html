@@ -1,0 +1,14 @@
+<div th:fragment="navigate-header" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <div class="navigate-bar">
+        <nav style="padding-top: 3px" class="navbar navbar-expand-lg">
+            <a class="navbar-brand" id="ids"><img class="img-fluid logo-not-avito" th:src="@{images/logo.jpg}"></a>
+            <a th:text="#{auto}" class="navbar-brand" href="#" id="ids">Авто</a>
+            <a th:text="#{realty}" class="navbar-brand" href="#" id="ids">Недвижимость</a>
+            <a th:text="#{job}" class="navbar-brand" href="#" id="ids">Работа</a>
+            <a th:text="#{services}" class="navbar-brand" href="#" id="ids">Услуги</a>
+            <a th:text="#{else}" class="navbar-brand" href="#" id="ids">ещё...</a>
+        </nav>
+    </div>
+
+</div>

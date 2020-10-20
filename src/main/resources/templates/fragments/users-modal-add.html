@@ -1,0 +1,56 @@
+<div th:fragment="add-user" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <div id="newUserModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content  col-md-8">
+                <div class="modal-header">
+                    <h4 class="modal-title" th:text="#{newUser}">Создать нового пользователя</h4>
+                    <button id="closeNewUserModal" type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form name="userCreationFormCP" align="center" id="newUserCR">
+                        <td>
+                            <label for="AdminPanelUserEmail" th:text="#{adminPanelUserMail}">User E-Mail</label><br>
+                            <input type="text" placeholder="Введите почту" id="AdminPanelUserEmail" name="userEmailCP"/>
+                            <p id="emailErrorsNU"></p>
+                        </td>
+                        <td>
+                            <label for="AdminPanelUserPassword"
+                                   th:text="#{adminPanelUserPassword}">Пароль</label><br>
+                            <input type="text" placeholder="Введите пароль" id="AdminPanelUserPassword" name="userPasswordCP"/>
+                            <p id="passwordErrorsNU"></p>
+                            <p id="passwordSpaceNotAllow"></p>
+                        </td>
+                        <td>
+                            <label for="AdminPanelUserFirstName"
+                                   th:text="#{adminPanelUserFirstName}">Имя</label><br>
+                            <input type="text" placeholder="Введите имя" id="AdminPanelUserFirstName" name="userFirstNameCP"/>
+                            <p id="firstnameErrorsNU"></p>
+                        </td>
+                        <td>
+                            <label for="AdminPanelUserLastName"
+                                   th:text="#{adminPanelUserLastName}">Фамилия</label><br>
+                            <input type="text" placeholder="Введите фамилию" id="AdminPanelUserLastName" name="userLastNameCP"/>
+                            <p id="lastnameErrorsNU"></p>
+                        </td>
+                        <td>
+                            <label for="roleSelect" th:text="#{adminPanelUserRoles}">Роли</label><br>
+                            <select multiple="multiple" size="2" id="roleSelect" name="roleSet">
+                                <option value="ADMIN">Role Admin</option>
+                                <option value="USER">Role User</option>
+                            </select>
+                            <p id="rolesErrorsNU"></p>
+                        </td>
+                        <a class="btn btn-success mb-2" role="button" id="createUser"
+                           th:text="#{adminPanelUserAddButton}">Создать пользователя</a>
+                        <p id="createUserResult"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

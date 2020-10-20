@@ -1,0 +1,32 @@
+<div th:fragment="password-recovery" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="modal"
+         id="pswdModal"
+         tabindex="-1"
+         role="dialog">
+        <div class="modal-dialog"
+             role="document">
+            <div class="modal-content modal-pswd center-block">
+                <div class="modal-body" id="pswdBlock">
+                    <div class="text-center">
+                        <h3><strong>Восстановление пароля</strong></h3>
+                    </div>
+                    <button class="close modal-pswd-close"
+                            data-dismiss="modal"
+                            data-marker="popup-location/close-button">X</button>
+                    <div class="form-group recovery-form-padding" id="passwordModBlock">
+                        <input class="form-control"
+                               type="text"
+                               name="recoveryEmail"
+                               placeholder="Электронная почта"/>
+                        <div class="d-flex justify-content-center">
+                        <button type="button"
+                                id="recoveryButton"
+                                class="btn btn-primary margin-button"
+                                >Сбросить текущий пароль</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

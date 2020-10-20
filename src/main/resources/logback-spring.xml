@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <timestamp key="today" datePattern="yyyy-MM-dd"/>
+    <property name="LOG_HOME" value="log"/>
+    <property name="REST_CONTROLLER_HOME" value="log/controllers/rest"/>
+    <property name="SIMPLE_CONTROLLER_HOME" value="log/controllers/simple"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>
+                %black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE-AUDIT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_HOME}/board_of_ads-${today}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${LOG_HOME}/board_of_ads-log_%d{yyyy-MM-dd}.%i.txt</fileNamePattern>
+            <!-- each file should be at most 20MB, keep 30 days worth of history, but at most 1GB -->
+            <maxFileSize>20MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>
+                %d{DEFAULT} %-5level [%t] %c: %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="MainPageController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${SIMPLE_CONTROLLER_HOME}/mainpagecontroller/MainPageController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="AuthController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${SIMPLE_CONTROLLER_HOME}/authcontroller/AuthController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="AdminRestController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${REST_CONTROLLER_HOME}/adminrestcontroller/AdminRestController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="AuthRestController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${REST_CONTROLLER_HOME}/authrestcontroller/AuthRestController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="CityRestController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${REST_CONTROLLER_HOME}/cityrestcontroller/CityRestController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="MailRestController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${REST_CONTROLLER_HOME}/mailrestcontroller/MailRestController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="CategoryRestController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${REST_CONTROLLER_HOME}/categoryrestcontroller/CategoryRestController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="PostingRestController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${REST_CONTROLLER_HOME}/postingrestcontroller/PostingRestController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SearchPostingRestController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${REST_CONTROLLER_HOME}/searchpostingrestcontroller/SearchPostingRestController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="UserRestController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${REST_CONTROLLER_HOME}/userrestcontroller/UserRestController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="NotificationRestController-Audit"
+              class="ch.qos.logback.core.FileAppender">
+        <file>${REST_CONTROLLER_HOME}/notificationrestcontroller/NotificationRestController-log_${today}.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{DEFAULT} %level - %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <root level="WARN" additivity="false">
+        <appender-ref ref="FILE-AUDIT"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+    <logger name="org.springframework.web" level="WARN" additivity="false">
+        <appender-ref ref="FILE-AUDIT"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="org.hibernate" level="INFO" additivity="false">
+        <appender-ref ref="FILE-AUDIT"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <logger name="com.board_of_ads" level="INFO" additivity="false">
+        <appender-ref ref="FILE-AUDIT"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+    <!--    Controllers loggers setup-->
+    <logger name="com.board_of_ads.controllers.simple.MainPageController" level="INFO" additivity="true">
+        <appender-ref ref="MainPageController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.simple.AuthController" level="INFO" additivity="true">
+        <appender-ref ref="AuthController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.rest.AdminRestController" level="INFO" additivity="true">
+        <appender-ref ref="AdminRestController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.rest.AuthRestController" level="INFO" additivity="true">
+        <appender-ref ref="AuthRestController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.rest.CityRestController" level="INFO" additivity="true">
+        <appender-ref ref="CityRestController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.rest.CategoryRestController" level="INFO" additivity="true">
+        <appender-ref ref="CategoryRestController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.rest.MailRestController" level="INFO" additivity="true">
+        <appender-ref ref="MailRestController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.rest.PostingRestController" level="INFO" additivity="true">
+        <appender-ref ref="PostingRestController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.rest.SearchPostingRestController" level="INFO" additivity="true">
+        <appender-ref ref="SearchPostingRestController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.rest.UserRestController" level="INFO" additivity="true">
+        <appender-ref ref="UserRestController-Audit"/>
+    </logger>
+    <logger name="com.board_of_ads.controllers.rest.NotificationRestController" level="DEBUG" additivity="true">
+        <appender-ref ref="NotificationRestController-Audit"/>
+    </logger>
+</configuration>

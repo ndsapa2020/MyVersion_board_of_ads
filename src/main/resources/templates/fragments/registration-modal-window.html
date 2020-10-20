@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--min.css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../static/css/registration-style.css" >
+    <title>Регистрация</title>
+</head>
+<body>
+
+<!-- Link trigger modal -->
+
+<a href="#registrationModalSub" data-toggle="modal">Модальное Окно</a>
+
+<!-- Modal -->
+
+<form enctype="multipart/form-data" action="../api/user/modal-reg" method="post">
+    <div class="modal"
+         id="registrationModalSub"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="registrationModalSubTitle"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-offset-2">
+                        <h3 class="modal-title" id="registrationModalSubLongTitle">Регистрация</h3>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&#10005;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body" id="center">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="eemail" name="eemail" placeholder="Введите e-mail">
+                    </div>
+
+                    <div class="container text-center">
+                        <button type="submit" class="btn btn-info">Продолжить</button>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <div class="container text-center">
+                        <h7>У вас есть учетная запись? <a href="...">Войти</a></h7>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

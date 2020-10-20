@@ -1,0 +1,48 @@
+.user-profile-avatar {
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    line-height: 130px;
+    border-radius: 65px;
+    text-align: center;
+    margin-right: 10px;
+    color: white;
+    padding: 15px;
+}
+
+.profile-menu-font {
+    font-size: 16px;
+
+}
+
+.user-profile-name {
+    font-weight: bold;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.profile-body {
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 1230px;
+}
+
+.rating-mini-profile {
+    display: inline-block;
+    font-size: 0;
+}
+
+.rating-mini-profile span {
+    padding: 0;
+    font-size: 20px;
+    line-height: 1;
+    color: lightgrey;
+}
+
+.rating-mini-profile > span:before {
+    content: '★';
+}
+
+.rating-mini-profile > span.active {
+    color: gold;
+}

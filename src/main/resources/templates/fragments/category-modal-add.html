@@ -1,0 +1,35 @@
+<div th:fragment="add-category" xmlns:th="http://www.w3.org/1999/xhtml">
+
+    <div id="addCategoryModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-sm" style="margin-top: 150px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" th:text="#{addNewCategory}"></h4>
+                    <button type="button" class="close" data-dismiss="modal"
+                            aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form class="center-block  text-center">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="categoryAddName" th:text="#{adminPanelCategoryName}"></label>
+                            <input type="text" class="form-control mb-2" id="categoryAddName"/>
+                            <label for="parent-add-select" th:text="#{adminPanelParentCategoryName}"></label>
+                            <select id="parent-add-select" class="form-control">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div>
+                        </div>
+                        <button id="addCategoryButton" type="button" class="btn btn-success" th:text="#{createButton}"></button>
+                        <button id="closeAddCategory" type="button" class="btn btn-secondary"
+                                data-dismiss="modal" th:text="#{closeButton}"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
